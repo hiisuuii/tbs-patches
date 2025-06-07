@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "live.hisui.tbspatch.mixin",
+  "refmap": "mixins.tbspatch.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ChangeDefaultConfigSettings",
+    "ReenableQuitGameMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "HorribleConfigScreenFixingMixin"
+  ]
+}
