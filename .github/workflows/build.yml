@@ -49,7 +49,7 @@ jobs:
     - name: Extract project version from gradle.properties
       id: get_version
       run: |
-        version=$(grep '^version=' gradle.properties | cut -d'=' -f2 | tr -d '[:space:]')
+        version=$(grep '^mod_version=' gradle.properties | cut -d'=' -f2 | tr -d '[:space:]')
         echo "VERSION=$version" >> $GITHUB_ENV
         echo "version=$version" >> $GITHUB_OUTPUT
 
