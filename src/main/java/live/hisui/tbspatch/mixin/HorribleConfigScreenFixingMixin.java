@@ -13,9 +13,9 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-@Mixin(value = ConfigScreen.class, remap = false)
+@Mixin(value = ConfigScreen.class)
 public abstract class HorribleConfigScreenFixingMixin extends AbstractContainerScreen<ConfigMenu> {
-    @Shadow @Final private Level world;
+    @Shadow(remap = false) @Final private Level world;
 
     public HorribleConfigScreenFixingMixin(ConfigMenu p_97741_, Inventory p_97742_, Component p_97743_) {
         super(p_97741_, p_97742_, p_97743_);
