@@ -32,6 +32,10 @@ public class Config
             .comment("Whether to enable the Quit Game button on the menu")
             .define("enableQuitGameButton", true);
 
+    private static final ForgeConfigSpec.BooleanValue DONT_BLOCK_COMMAND_USE = BUILDER
+            .comment("Whether to prevent TBS from blocking command usage")
+            .define("dontBlockCommands", true);
+
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
@@ -40,6 +44,7 @@ public class Config
     public static boolean disableVhsByDefault;
     public static boolean disableBaseExplodingByDefault;
     public static boolean enableQuitGameButton;
+    public static boolean dontBlockCommands;
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
@@ -49,5 +54,6 @@ public class Config
         disableVhsByDefault = DISABLE_VHS_BY_DEFAULT.get();
         disableBaseExplodingByDefault = DISABLE_BASE_EXPLODING_BY_DEFAULT.get();
         enableQuitGameButton = RE_ENABLE_QUIT_BUTTON.get();
+        dontBlockCommands = DONT_BLOCK_COMMAND_USE.get();
     }
 }
