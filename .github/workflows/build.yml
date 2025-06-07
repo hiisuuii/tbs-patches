@@ -23,6 +23,12 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build
+        
+      - name: Upload built JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-jar
+          path: build/libs/*.jar
   release:
     needs: build
     runs-on: ubuntu-latest
@@ -40,21 +46,43 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Build project
-      run: ./gradlew build
-
     - name: Extract project version from gradle.properties
       id: get_version
       run: |
-        version=$(grep '^mod_version=' gradle.properties | cut -d'=' -f2 | tr -d '[:space:]')
+        version=$(grep '^version=' gradle.properties | cut -d'=' -f2 | tr -d '[:space:]')
         echo "VERSION=$version" >> $GITHUB_ENV
         echo "version=$version" >> $GITHUB_OUTPUT
 
-    - name: Find built JAR file
+    - name: Check if release already exists
+      id: check_release
+      run: |
+        response=$(curl -s -o /dev/null -w "%{http_code}" \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          https://api.github.com/repos/${{ github.repository }}/releases/tags/v${{ steps.get_version.outputs.version }})
+
+        if [ "$response" -eq 200 ]; then
+          echo "Release already exists for version v${{ steps.get_version.outputs.version }}"
+          echo "skip_release=true" >> $GITHUB_OUTPUT
+        else
+          echo "skip_release=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Exit if release already exists
+      if: steps.check_release.outputs.skip_release == 'true'
+      run: |
+        echo "Skipping release: version already published."
+        exit 0
+
+    - name: Download JAR from build job
+      uses: actions/download-artifact@v4
+      with:
+        name: built-jar
+        path: ./jar
+
+    - name: Find JAR file
       id: find_jar
       run: |
-        jarfile=$(find build/libs -type f -name "*.jar" | head -n 1)
-        echo "JAR_PATH=$jarfile" >> $GITHUB_ENV
+        jarfile=$(find ./jar -type f -name "*.jar" | head -n 1)
         echo "jar_path=$jarfile" >> $GITHUB_OUTPUT
         echo "jar_name=$(basename $jarfile)" >> $GITHUB_OUTPUT
 
@@ -76,3 +104,6 @@ jobs:
         asset_path: ${{ steps.find_jar.outputs.jar_path }}
         asset_name: ${{ steps.find_jar.outputs.jar_name }}
         asset_content_type: application/java-archive
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
