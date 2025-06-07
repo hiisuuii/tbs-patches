@@ -8,10 +8,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(ExitDissable.class)
+@Mixin(value = ExitDissable.class, remap = false)
 public class ReenableQuitGameMixin {
 
-    @Inject(method = "onGuiInit", at = @At("HEAD"), cancellable = true, remap = false)
+    @Inject(method = "onGuiInit", at = @At("HEAD"), cancellable = true)
     private static void inj(ScreenEvent.Init.Post event, CallbackInfo ci){
         if(Config.enableQuitGameButton) {
             ci.cancel();
