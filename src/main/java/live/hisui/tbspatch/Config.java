@@ -46,7 +46,7 @@ public class Config
         //endregion
         BUILDER.pop();
 
-        BUILDER.push("Gameplay Tweaks");
+        BUILDER.push("Mod Tweaks");
         //region tweaks
         RE_ENABLE_QUIT_BUTTON = BUILDER
                 .comment("Whether to enable the Quit Game button on the menu")
@@ -54,6 +54,9 @@ public class Config
         DONT_BLOCK_COMMAND_USE = BUILDER
                 .comment("Whether to prevent TBS from blocking command usage")
                 .define("dontBlockCommands", true);
+        USE_OLD_MOON_PHASES = BUILDER
+                .comment("Whether to use the old corrupted moon textures")
+                .define("useOldMoonPhases", false);
         //endregion
         BUILDER.pop();
 
@@ -310,6 +313,7 @@ public class Config
 
     private static final ForgeConfigSpec.BooleanValue RE_ENABLE_QUIT_BUTTON;
     private static final ForgeConfigSpec.BooleanValue DONT_BLOCK_COMMAND_USE;
+    private static final ForgeConfigSpec.BooleanValue USE_OLD_MOON_PHASES;
     //endregion
 
     //region events
@@ -387,6 +391,7 @@ public class Config
 
     public static boolean enableQuitGameButton;
     public static boolean dontBlockCommands;
+    public static boolean useOldMoonPhases;
     //endregion
     //region events
     public static boolean damageLookAroundEvent;
@@ -463,6 +468,7 @@ public class Config
 
         enableQuitGameButton = RE_ENABLE_QUIT_BUTTON.get();
         dontBlockCommands = DONT_BLOCK_COMMAND_USE.get();
+        useOldMoonPhases = USE_OLD_MOON_PHASES.get();
         //endregion
         //region events
 
