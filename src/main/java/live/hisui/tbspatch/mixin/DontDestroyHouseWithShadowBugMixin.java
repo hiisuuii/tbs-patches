@@ -4,7 +4,7 @@ import com.llamalad7.mixinextras.expression.Definition;
 import com.llamalad7.mixinextras.expression.Expression;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import live.hisui.tbspatch.EventToggles;
+import live.hisui.tbspatch.Config;
 import live.hisui.tbspatch.TBSPatchMod;
 import net.mcreator.interpritation.procedures.EventEngineProcedure;
 import org.spongepowered.asm.mixin.Debug;
@@ -21,7 +21,7 @@ public class DontDestroyHouseWithShadowBugMixin {
     at = @At("MIXINEXTRAS:EXPRESSION"), remap = false)
     private static boolean never(boolean original) {
         TBSPatchMod.LOGGER.info("Shadow event triggered: {}", original);
-        if(!EventToggles.shadowCubeEvent) {
+        if(!Config.shadowCubeEvent) {
             return false;
         }
         return original;
