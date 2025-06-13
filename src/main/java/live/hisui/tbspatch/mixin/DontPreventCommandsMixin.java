@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class DontPreventCommandsMixin {
 
     @Inject(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;Ljava/lang/String;)V", at = @At("HEAD"), cancellable = true, remap = false)
-    private static void inj(Event event, LevelAccessor world, double x, double y, double z, Entity entity, String command, CallbackInfo ci){
+    private static void configDontBlockCommands(Event event, LevelAccessor world, double x, double y, double z, Entity entity, String command, CallbackInfo ci){
         if(Config.dontBlockCommands){
             ci.cancel();
         }

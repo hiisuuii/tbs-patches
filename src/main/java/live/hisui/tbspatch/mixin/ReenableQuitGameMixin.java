@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ReenableQuitGameMixin {
 
     @Inject(method = "onGuiInit", at = @At("HEAD"), cancellable = true)
-    private static void inj(ScreenEvent.Init.Post event, CallbackInfo ci){
+    private static void enableQuitGameButton(ScreenEvent.Init.Post event, CallbackInfo ci){
         if(Config.enableQuitGameButton) {
             ci.cancel();
         }

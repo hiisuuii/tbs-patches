@@ -27,7 +27,7 @@ public abstract class ChangeDefaultConfigSettings {
     @Shadow public boolean config_noblockbreaking;
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    public void inj(CallbackInfo ci){
+    private void changeDefaultConfigValues(CallbackInfo ci){
         if(Config.disableCrashingByDefault) {
             this.config_nocrashes = true;
         }

@@ -19,7 +19,7 @@ public class DontDestroyHouseWithShadowBugMixin {
     @Expression("? == 54.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
     at = @At("MIXINEXTRAS:EXPRESSION"), remap = false)
-    private static boolean never(boolean original) {
+    private static boolean configDisableShadowCube(boolean original) {
         TBSPatchMod.LOGGER.info("Shadow event triggered: {}", original);
         if(!Config.shadowCubeEvent) {
             return false;

@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ForceRandomEventCommandMixin {
 
     @Inject(cancellable = true, method = "lambda$registerCommand$1", at = @At(shift = At.Shift.AFTER, value = "INVOKE", target = "Lnet/minecraft/commands/CommandSourceStack;getEntity()Lnet/minecraft/world/entity/Entity;",ordinal = 0))
-    private static void inj(CommandContext<CommandSourceStack> arguments, CallbackInfoReturnable<Integer> cir){
+    private static void deduplicateForceEventCommand(CommandContext<CommandSourceStack> arguments, CallbackInfoReturnable<Integer> cir){
         Level level = arguments.getSource().getLevel();
         Entity entity = arguments.getSource().getEntity();
         var x = arguments.getSource().getPosition().x();

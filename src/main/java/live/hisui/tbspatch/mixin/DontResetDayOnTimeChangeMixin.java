@@ -19,7 +19,7 @@ public class DontResetDayOnTimeChangeMixin {
 
     @WrapOperation(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
     at = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerLevel;setDayTime(J)V"))
-    private static void inj(ServerLevel instance, long timeToSet, Operation<Void> original){
+    private static void dontChangeDayWithCode(ServerLevel instance, long timeToSet, Operation<Void> original){
         long dayTime = instance.getDayTime();
         long currentDay = dayTime / 24000;
         long newTime = currentDay * 24000 + timeToSet;
@@ -28,7 +28,7 @@ public class DontResetDayOnTimeChangeMixin {
 
     @WrapOperation(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/Commands;performPrefixedCommand(Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I"))
-    private static int inj(Commands instance, CommandSourceStack pSource, String pCommand, Operation<Integer> original, @Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity){
+    private static int dontChangeDayWithCommand(Commands instance, CommandSourceStack pSource, String pCommand, Operation<Integer> original, @Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity){
         int timeToBe = 0;
         if(pCommand.equals("time set day")){
             timeToBe = 0;
