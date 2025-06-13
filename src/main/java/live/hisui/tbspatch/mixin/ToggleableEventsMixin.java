@@ -1,7 +1,9 @@
 package live.hisui.tbspatch.mixin;
 
+import com.llamalad7.mixinextras.expression.Definition;
 import com.llamalad7.mixinextras.expression.Expression;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import com.llamalad7.mixinextras.sugar.Local;
 import live.hisui.tbspatch.Config;
 import net.mcreator.interpritation.procedures.EventEngineProcedure;
 import org.spongepowered.asm.mixin.Debug;
@@ -12,7 +14,8 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(EventEngineProcedure.class)
 public class ToggleableEventsMixin {
 
-    @Expression("? == 1.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 1.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableDamageLook(boolean original) {
@@ -21,7 +24,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 2.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 2.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableDamage(boolean original) {
@@ -30,7 +34,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 3.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 3.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableNightAndSongEvent(boolean original) {
@@ -39,7 +44,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 4.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 4.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableIgniteEvent(boolean original) {
@@ -48,7 +54,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 5.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 5.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableLightningEvent(boolean original) {
@@ -57,7 +64,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 6.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 6.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableGrassSoundsEvent(boolean original) {
@@ -66,7 +74,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 7.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 7.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableHeartbeatEvent(boolean original) {
@@ -75,7 +84,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 8.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 8.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableHungerEvent(boolean original) {
@@ -84,7 +94,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 9.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 9.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableGuiCloseEvent(boolean original) {
@@ -93,7 +104,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 10.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 10.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableNullScreenEvent(boolean original) {
@@ -102,7 +114,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 11.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 11.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableChatMessageEvent(boolean original) {
@@ -111,25 +124,28 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 12.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 12.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
-            at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 1), remap = false)
+            at = @At(value = "MIXINEXTRAS:EXPRESSION"), remap = false)
     private static boolean configDisablePlayOrStopsoundEvent(boolean original) {
         if(Config.soundEffectsEvent) {
             return false;
         }
         return original;
     }
-    @Expression("? == 13.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 13.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
-            at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 1), remap = false)
+            at = @At(value = "MIXINEXTRAS:EXPRESSION"), remap = false)
     private static boolean configDisableNullAdvancementEvent(boolean original) {
         if(Config.nullAdvancementEvent) {
             return false;
         }
         return original;
     }
-    @Expression("? == 14.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 14.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableNullBookEvent(boolean original) {
@@ -138,7 +154,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 16.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 16.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableNullTitleEvent(boolean original) {
@@ -147,7 +164,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 17.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 17.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableBedrockSkyEvent(boolean original) {
@@ -156,7 +174,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 18.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 18.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableWaterSkyEvent(boolean original) {
@@ -165,7 +184,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 19.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 19.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableExplosionEvent(boolean original) {
@@ -174,7 +194,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 20.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 20.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableChangeTimeEvent(boolean original) {
@@ -183,7 +204,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 21.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 21.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableNullJumpscareEvent(boolean original) {
@@ -192,7 +214,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 21.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 21.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 1), remap = false)
     private static boolean configDisableXPEvent(boolean original) {
@@ -201,7 +224,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 22.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 22.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableDisc11Event(boolean original) {
@@ -210,7 +234,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 23.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 23.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableRandomRotateEvent(boolean original) {
@@ -219,7 +244,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 24.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 24.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableClanVoidTeleporterEvent(boolean original) {
@@ -228,7 +254,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 25.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 25.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableRedstoneTorchEvent(boolean original) {
@@ -237,7 +264,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 26.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 26.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableBlankSignEvent(boolean original) {
@@ -246,7 +274,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 27.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 27.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableSpawnWaterEvent(boolean original) {
@@ -255,7 +284,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 27.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 27.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 1), remap = false)
     private static boolean configDisableChangeSpawnEvent(boolean original) {
@@ -264,7 +294,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 28.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 28.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableEveningTimeEvent(boolean original) {
@@ -273,7 +304,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 29.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 29.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableRandomPushEvent(boolean original) {
@@ -282,7 +314,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 30.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 30.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableBlackParticlesEvent(boolean original) {
@@ -291,7 +324,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 31.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 31.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableBlackBlockScreenEvent(boolean original) {
@@ -300,7 +334,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 32.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 32.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableHelloBlock(boolean original) {
@@ -309,7 +344,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 33.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 33.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableExplodingBlockEvent(boolean original) {
@@ -318,7 +354,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 34.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 34.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configGoodLuckScreen(boolean original) {
@@ -327,7 +364,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 35.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 35.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableNullLurkerEvent(boolean original) {
@@ -336,7 +374,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 36.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 36.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableToggleDaylightCycleEvent(boolean original) {
@@ -345,7 +384,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 37.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 37.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableBSODEvent(boolean original) {
@@ -354,7 +394,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 38.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 38.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableObfuscatedSignEvent(boolean original) {
@@ -363,7 +404,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 39.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 39.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableDiamondsGiftEvent(boolean original) {
@@ -372,7 +414,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 40.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 40.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableGLErrorEvent(boolean original) {
@@ -381,7 +424,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 41.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 41.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableNetherrackInBaseEvent(boolean original) {
@@ -390,7 +434,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 41.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 41.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 1), remap = false)
     private static boolean configDisableAirInBaseEvent(boolean original) {
@@ -399,7 +444,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 42.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 42.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableVHSFilterSwitchEvent(boolean original) {
@@ -408,7 +454,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 43.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 43.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableBlackDotsEvent(boolean original) {
@@ -417,7 +464,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 44.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 44.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableEyesEvent(boolean original) {
@@ -426,7 +474,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 45.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 45.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableSmileyEvent(boolean original) {
@@ -435,7 +484,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 46.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 46.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableDoorSoundsEvent(boolean original) {
@@ -444,7 +494,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 47.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 47.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableMoonSoundEvent(boolean original) {
@@ -453,7 +504,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 48.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 48.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableLeaveEffectEvent(boolean original) {
@@ -462,7 +514,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 49.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 49.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableHearMeEvent(boolean original) {
@@ -471,7 +524,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 50.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 50.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableFakeVillagerEvent(boolean original) {
@@ -480,7 +534,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 51.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 51.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableCorruptMoonEvent(boolean original) {
@@ -489,7 +544,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 52.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 52.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableLavaCastEvent(boolean original) {
@@ -498,7 +554,8 @@ public class ToggleableEventsMixin {
         }
         return original;
     }
-    @Expression("? == 53.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 53.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0), remap = false)
     private static boolean configDisableLavaPlacementEvent(boolean original) {
@@ -508,7 +565,8 @@ public class ToggleableEventsMixin {
         return original;
     }
 
-    @Expression("? == 54.0")
+    @Definition(id = "eventengine", local = @Local(type = double.class, name = "eventengine"))
+    @Expression("eventengine == 54.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
     at = @At("MIXINEXTRAS:EXPRESSION"), remap = false)
     private static boolean configDisableShadowCubeEvent(boolean original) {
