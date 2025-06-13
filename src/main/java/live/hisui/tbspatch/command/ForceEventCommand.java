@@ -8,6 +8,7 @@ import net.mcreator.interpritation.procedures.EventEngineProcedure;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 
 public class ForceEventCommand {
@@ -30,5 +31,10 @@ public class ForceEventCommand {
                         }))
 
         );
+        dispatcher.register(Commands.literal("moonphase").executes(ctx -> {
+            String fmt = "The moon phase is: " + ctx.getSource().getLevel().dimensionType().moonPhase(ctx.getSource().getLevel().dayTime());
+            ctx.getSource().sendSuccess(() -> Component.literal(fmt), false);
+            return ctx.getSource().getLevel().dimensionType().moonPhase(ctx.getSource().getLevel().dayTime());
+        }));
     }
 }
