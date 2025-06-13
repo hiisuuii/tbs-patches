@@ -24,6 +24,7 @@ public class ForceEventCommand {
                             var id = IntegerArgumentType.getInteger(ctx, "id");
                             TBSPatchMod.forcedEventID.set(id);
                             TBSPatchMod.LOGGER.info("We are attempting to force an event with ID: {}",TBSPatchMod.forcedEventID.get());
+                            TBSPatchMod.riggedEventChance.set(true);
                             EventEngineProcedure.execute(ctx.getSource().getLevel(), ctx.getSource().getPosition().x, ctx.getSource().getPosition().y, ctx.getSource().getPosition().z, ctx.getSource().getEntityOrException());
                             return IntegerArgumentType.getInteger(ctx, "id");
                         }))
