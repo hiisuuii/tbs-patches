@@ -10,6 +10,7 @@
     "DontPreventCommandsMixin",
     "DontResetDayOnTimeChangeMixin",
     "EventEngineAllowForcingMixin",
+    "ForceRandomEventCommandMixin",
     "ReenableQuitGameMixin"
   ],
   "injectors": {

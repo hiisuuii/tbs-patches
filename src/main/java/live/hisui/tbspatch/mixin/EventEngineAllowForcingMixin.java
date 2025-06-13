@@ -32,9 +32,9 @@ public class EventEngineAllowForcingMixin {
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D"), remap = false)
     private static double guarantee(double original) {
-        if(TBSPatchMod.forcedEventID != null) {
-            TBSPatchMod.LOGGER.info("We have found a forced event ID");
+        if(TBSPatchMod.riggedEventChance.get()) {
             TBSPatchMod.LOGGER.info("Rigging event chance");
+            TBSPatchMod.riggedEventChance.set(false);
             return 0.0;
         } else {
             return original;
