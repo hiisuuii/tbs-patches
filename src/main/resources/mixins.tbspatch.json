@@ -11,7 +11,8 @@
     "DontResetDayOnTimeChangeMixin",
     "EventEngineAllowForcingMixin",
     "ForceRandomEventCommandMixin",
-    "ReenableQuitGameMixin"
+    "ReenableQuitGameMixin",
+    "UseOldMoonPhasesMixin"
   ],
   "injectors": {
     "defaultRequire": 1
