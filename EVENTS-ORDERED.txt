@@ -9,8 +9,8 @@
 9: Close whatever GUI you're in
 10: Open 1 of 3 harmless "null screens"
 11: Say one of 14 different messages in chat
-12: Play a cave sound, disc 13, disc 11, or stop all sounds
-13: Give "nullnullnull" advancement
+12: Play a cave sound, disc 13, disc 11, or stop all sounds # ORD 1
+13: Give "nullnullnull" advancement # ORD 1
 14: Give "null" written book
 15: do nothing
 16: Display "null" in the middle of the screen several times
@@ -18,28 +18,30 @@
 18: Place a water block 50-60 blocks in the air
 19: Cause an explosion somewhere nearby
 20: Set time to midnight or dawn (70%/30%)
-21: Spawn the null jumpscare and give 1-10 XP
+21: Spawn the null jumpscare # ORD 0
+21: Give 1-10 XP points # ORD 1
 22: Give disc 11
 23: Rotate you randomly.
 24: Creates a block in your base which sends you to the Clan Void dimension
 25: Creates a redstone torch block in your base
 26: Creates a blank oak sign in your base
-27: Spawns water in your base
+27: Spawns water in your base # ORD 0
+27: Allegedly sets your spawn to your current position, but I'm not sure this works.. # ORD 1
 28: Sets the time to evening
-29: Pushes you around a little bit
+29: Randomly pushes you around a little
 30: Spawns spooky black square particles around you
 31: Spawns a weird black box on part of your screen.
 32: Creates a "Hello" block in your base
 33: Creates a block in your base which explodes
 34: Opens "Good luck =)" screen, makes it night, allegedly plays a sound
 35: Spawns a Null who strikes himself with lightning and puts static on your screen if you get too close
-36: Has a 30% chance to disable the daylight cycle
+36: Has a 30% chance to disable the daylight cycle, 70% chance to enable
 37: Fake BSOD scare
 38: Places a sign with obfuscated text near your base
 39: Places a chest with 10 diamonds near your base
 40: OpenGL Error 1282 in chat several times, followed by "Here I am." and a cave sound
-41: Creates a netherrack block in your base
-41: Replaces a block in your base with air
+41: Creates a netherrack block in your base # ORD 0
+41: Replaces a block in your base with air # ORD 1
 42: Disables VHS filter
 43: Places very small black dots on your screen, teleports you in the air, and gives slow falling
 44: Spawns spooky eyes particles around you
