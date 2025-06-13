@@ -11,12 +11,12 @@ public class UseOldMoonPhasesMixin {
     @ModifyArg(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;)V",
     at = @At(value = "INVOKE", target = "Lnet/minecraft/resources/ResourceLocation;<init>(Ljava/lang/String;)V",ordinal = 0))
     private static String inj0(String pLocation){
-        return "thebrokenscript:textures/moonevent/moon_phases_old";
+        return "thebrokenscript:textures/moonevent/moon_phases_old.png";
     }
 
     @ModifyArg(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/resources/ResourceLocation;<init>(Ljava/lang/String;)V",ordinal = 2))
     private static String inj2(String pLocation){
-        return "thebrokenscript:textures/moonevent/moon_phases_old";
+        return "thebrokenscript:textures/moonevent/moon_phases_old.png";
     }
 }
