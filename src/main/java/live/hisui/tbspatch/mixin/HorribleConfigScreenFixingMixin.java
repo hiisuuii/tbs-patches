@@ -25,63 +25,63 @@ public abstract class HorribleConfigScreenFixingMixin extends AbstractContainerS
             target = "Lnet/minecraft/client/gui/components/Checkbox;<init>(IIIILnet/minecraft/network/chat/Component;Z)V",
             ordinal = 0)
     )
-    private boolean unfuck0(boolean original){
+    private boolean entitiesBox(boolean original){
         return ThebrokenscriptModVariables.MapVariables.get(this.world).config_noentitiesspawn;
     }
     @ModifyArg(method = "init", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/gui/components/Checkbox;<init>(IIIILnet/minecraft/network/chat/Component;Z)V",
             ordinal = 1)
     )
-    private boolean unfuck1(boolean original){
+    private boolean eventsBox(boolean original){
         return ThebrokenscriptModVariables.MapVariables.get(this.world).config_randomevents;
     }
     @ModifyArg(method = "init", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/gui/components/Checkbox;<init>(IIIILnet/minecraft/network/chat/Component;Z)V",
             ordinal = 2)
     )
-    private boolean unfuck2(boolean original){
+    private boolean crashesBox(boolean original){
         return ThebrokenscriptModVariables.MapVariables.get(this.world).config_nocrashes;
     }
     @ModifyArg(method = "init", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/gui/components/Checkbox;<init>(IIIILnet/minecraft/network/chat/Component;Z)V",
             ordinal = 3)
     )
-    private boolean unfuck3(boolean original){
+    private boolean jumpscaresBox(boolean original){
         return ThebrokenscriptModVariables.MapVariables.get(this.world).config_norandomjumpscare;
     }
     @ModifyArg(method = "init", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/gui/components/Checkbox;<init>(IIIILnet/minecraft/network/chat/Component;Z)V",
             ordinal = 4)
     )
-    private boolean unfuck4(boolean original){
+    private boolean structuresBox(boolean original){
         return ThebrokenscriptModVariables.MapVariables.get(this.world).config_norandomstructures;
     }
     @ModifyArg(method = "init", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/gui/components/Checkbox;<init>(IIIILnet/minecraft/network/chat/Component;Z)V",
             ordinal = 5)
     )
-    private boolean unfuck5(boolean original){
-        return ThebrokenscriptModVariables.MapVariables.get(this.world).showvhs;
+    private boolean vhsBox(boolean original){
+        return !ThebrokenscriptModVariables.MapVariables.get(this.world).showvhs;
     }
     @ModifyArg(method = "init", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/gui/components/Checkbox;<init>(IIIILnet/minecraft/network/chat/Component;Z)V",
             ordinal = 6)
     )
-    private boolean unfuck6(boolean original){
+    private boolean banningBox(boolean original){
         return ThebrokenscriptModVariables.MapVariables.get(this.world).config_noban;
     }
     @ModifyArg(method = "init", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/gui/components/Checkbox;<init>(IIIILnet/minecraft/network/chat/Component;Z)V",
             ordinal = 7)
     )
-    private boolean unfuck7(boolean original){
+    private boolean blockBreakingBox(boolean original){
         return ThebrokenscriptModVariables.MapVariables.get(this.world).config_noblockbreaking;
     }
     @ModifyArg(method = "init", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/gui/components/Checkbox;<init>(IIIILnet/minecraft/network/chat/Component;Z)V",
             ordinal = 8)
     )
-    private boolean unfuck(boolean original){
+    private boolean baseExplodingBox(boolean original){
         return ThebrokenscriptModVariables.MapVariables.get(this.world).config_nobaseexplode;
     }
 
