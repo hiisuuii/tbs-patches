@@ -15,12 +15,12 @@ import org.spongepowered.asm.mixin.injection.At;
 public class DontDestroyHouseWithShadowBugMixin {
 
     @Definition(id = "eventengine", local = @Local(name = "eventengine"))
-    @Expression("eventengine == 54.0")
+    @Expression("? == 54.0")
     @ModifyExpressionValue(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
     at = @At("MIXINEXTRAS:EXPRESSION"), remap = false)
     private static boolean never(boolean original) {
         TBSPatchMod.LOGGER.info("Shadow event triggered: {}", original);
-        return original;
+        return false;
     }
 
 }
