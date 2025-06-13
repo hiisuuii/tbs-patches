@@ -27,6 +27,22 @@ public class Config
         DISABLE_BASE_EXPLODING_BY_DEFAULT = BUILDER
                 .comment("Whether to disable the \"base exploding event\" by default")
                 .define("disableBaseExplodingByDefault", true);
+        DISABLE_ENTITIES_BY_DEFAULT = BUILDER
+                .comment("Whether to disable any Broken Script entities from spawning by default")
+                .define("disableEntitiesByDefault",false);
+        DISABLE_EVENTS_BY_DEFAULT = BUILDER
+                .comment("Whether to disable any random events from occurring by default")
+                .define("disableEventsByDefault",false);
+        DISABLE_JUMPSCARES_BY_DEFAULT = BUILDER
+                .comment("Whether to disable any jumpscares from happening by default")
+                .define("disableJumpscaresByDefault",false);
+        DISABLE_STRUCTURES_BY_DEFAULT = BUILDER
+                .comment("Whether to disable any Broken Script structures from spawning by default")
+                .define("disableStructuresByDefault",false);
+        DISABLE_BLOCK_BREAKING_BY_DEFAULT = BUILDER
+                .comment("Whether to disable any Broken Script entities from breaking blocks by default")
+                .define("disableBlockBreakingByDefault",false);
+
         //endregion
         BUILDER.pop();
 
@@ -286,6 +302,12 @@ public class Config
     private static final ForgeConfigSpec.BooleanValue DISABLE_CRASHING_BY_DEFAULT;
     private static final ForgeConfigSpec.BooleanValue DISABLE_VHS_BY_DEFAULT;
     private static final ForgeConfigSpec.BooleanValue DISABLE_BASE_EXPLODING_BY_DEFAULT;
+    private static final ForgeConfigSpec.BooleanValue DISABLE_ENTITIES_BY_DEFAULT;
+    private static final ForgeConfigSpec.BooleanValue DISABLE_EVENTS_BY_DEFAULT;
+    private static final ForgeConfigSpec.BooleanValue DISABLE_JUMPSCARES_BY_DEFAULT;
+    private static final ForgeConfigSpec.BooleanValue DISABLE_STRUCTURES_BY_DEFAULT;
+    private static final ForgeConfigSpec.BooleanValue DISABLE_BLOCK_BREAKING_BY_DEFAULT;
+
     private static final ForgeConfigSpec.BooleanValue RE_ENABLE_QUIT_BUTTON;
     private static final ForgeConfigSpec.BooleanValue DONT_BLOCK_COMMAND_USE;
     //endregion
@@ -357,6 +379,12 @@ public class Config
     public static boolean disableCrashingByDefault;
     public static boolean disableVhsByDefault;
     public static boolean disableBaseExplodingByDefault;
+    public static boolean disableEntitiesByDefault;
+    public static boolean disableEventsByDefault;
+    public static boolean disableJumpscaresByDefault;
+    public static boolean disableStructuresByDefault;
+    public static boolean disableBlockBreakingByDefault;
+
     public static boolean enableQuitGameButton;
     public static boolean dontBlockCommands;
     //endregion
@@ -427,6 +455,12 @@ public class Config
         disableCrashingByDefault = DISABLE_CRASHING_BY_DEFAULT.get();
         disableVhsByDefault = DISABLE_VHS_BY_DEFAULT.get();
         disableBaseExplodingByDefault = DISABLE_BASE_EXPLODING_BY_DEFAULT.get();
+        disableEntitiesByDefault = DISABLE_ENTITIES_BY_DEFAULT.get();
+        disableEventsByDefault = DISABLE_EVENTS_BY_DEFAULT.get();
+        disableJumpscaresByDefault = DISABLE_JUMPSCARES_BY_DEFAULT.get();
+        disableStructuresByDefault = DISABLE_STRUCTURES_BY_DEFAULT.get();
+        disableBlockBreakingByDefault = DISABLE_BLOCK_BREAKING_BY_DEFAULT.get();
+
         enableQuitGameButton = RE_ENABLE_QUIT_BUTTON.get();
         dontBlockCommands = DONT_BLOCK_COMMAND_USE.get();
         //endregion

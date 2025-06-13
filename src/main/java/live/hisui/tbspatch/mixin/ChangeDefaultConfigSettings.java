@@ -11,13 +11,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = ThebrokenscriptModVariables.MapVariables.class, remap = false)
 public abstract class ChangeDefaultConfigSettings {
 
-    @Shadow
-    public boolean config_nocrashes;
-    @Shadow
-    public boolean config_noban;
-    @Shadow
-    public boolean showvhs;
+    @Shadow public boolean config_nocrashes;
+    @Shadow public boolean config_noban;
+    @Shadow public boolean showvhs;
     @Shadow public boolean config_nobaseexplode;
+
+    @Shadow public boolean config_noentitiesspawn;
+
+    @Shadow public boolean config_randomevents;
+
+    @Shadow public boolean config_norandomjumpscare;
+
+    @Shadow public boolean config_norandomstructures;
+
+    @Shadow public boolean config_noblockbreaking;
 
     @Inject(method = "<init>", at = @At("TAIL"))
     public void inj(CallbackInfo ci){
@@ -33,5 +40,21 @@ public abstract class ChangeDefaultConfigSettings {
         if(Config.disableBaseExplodingByDefault){
             this.config_nobaseexplode = true;
         }
+        if(Config.disableEntitiesByDefault){
+            this.config_noentitiesspawn = true;
+        }
+        if(Config.disableEventsByDefault){
+            this.config_randomevents = false;
+        }
+        if(Config.disableJumpscaresByDefault){
+            this.config_norandomjumpscare = true;
+        }
+        if(Config.disableStructuresByDefault){
+            this.config_norandomstructures = true;
+        }
+        if(Config.disableBlockBreakingByDefault){
+            this.config_noblockbreaking = true;
+        }
+
     }
 }
