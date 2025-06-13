@@ -64,238 +64,234 @@ public class Config
         //region events
         DISABLE_DAMAGE_LOOK_AROUND_EVENT = BUILDER
                 .comment("Disable the damage and look around event")
-                .define("damageLookAroundEvent", false);
+                .define("disableDamageLookAroundEvent", false);
 
         DISABLE_DAMAGE_EVENT = BUILDER
                 .comment("Disable the damage event")
-                .define("damageEvent", false);
+                .define("disableDamageEvent", false);
 
         DISABLE_NIGHT_EFFECTS_EVENT = BUILDER
                 .comment("Disable the night effects event")
                 .comment("Plays sound, makes it night, gives blindness/slowness/slow falling, lightning chance")
-                .define("nightEffectsEvent", false);
+                .define("disableNightEffectsEvent", false);
 
         DISABLE_FIRE_EVENT = BUILDER
                 .comment("Disable the fire event")
-                .define("fireEvent", false);
+                .define("disableFireEvent", false);
 
         DISABLE_LIGHTNING_STRIKE_EVENT = BUILDER
                 .comment("Disable the lightning strike event")
-                .define("lightningStrikeEvent", false);
+                .define("disableLightningStrikeEvent", false);
 
         DISABLE_GRASS_BREAKING_SOUNDS_EVENT = BUILDER
                 .comment("Disable the grass breaking sounds event")
-                .define("grassBreakingSoundsEvent", false);
+                .define("disableGrassBreakingSoundsEvent", false);
 
         DISABLE_NIGHT_CAVE_SOUNDS_EVENT = BUILDER
                 .comment("Disable the night cave sounds event")
                 .comment("Sets night, plays cave sounds and heartbeat")
-                .define("nightCaveSoundsEvent", false);
+                .define("disableNightCaveSoundsEvent", false);
 
         DISABLE_HUNGER_EVENT = BUILDER
                 .comment("Disable the hunger event")
-                .define("hungerEvent", false);
+                .define("disableHungerEvent", false);
 
         DISABLE_CLOSE_GUI_EVENT = BUILDER
                 .comment("Disable the close GUI event")
-                .define("closeGuiEvent", false);
+                .define("disableCloseGuiEvent", false);
 
         DISABLE_NULL_SCREENS_EVENT = BUILDER
                 .comment("Disable the null screens event")
-                .define("nullScreensEvent", false);
+                .define("disableNullScreensEvent", false);
 
         DISABLE_CHAT_MESSAGES_EVENT = BUILDER
                 .comment("Disable the chat messages event")
-                .define("chatMessagesEvent", false);
+                .define("disableChatMessagesEvent", false);
 
         DISABLE_SOUND_EFFECTS_EVENT = BUILDER
                 .comment("Disable the sound effects event")
                 .comment("Plays cave sounds, disc 13, disc 11, or stops sounds")
-                .define("soundEffectsEvent", false);
+                .define("disableSoundEffectsEvent", false);
 
         DISABLE_NULL_ADVANCEMENT_EVENT = BUILDER
                 .comment("Disable the null advancement event")
-                .define("nullAdvancementEvent", false);
+                .define("disableNullAdvancementEvent", false);
 
         DISABLE_NULL_BOOK_EVENT = BUILDER
                 .comment("Disable the null book event")
-                .define("nullBookEvent", false);
-
-        DISABLE_NOTHING_EVENT = BUILDER
-                .comment("Disable the nothing event")
-                .define("nothingEvent", false);
+                .define("disableNullBookEvent", false);
 
         DISABLE_NULL_DISPLAY_EVENT = BUILDER
-                .comment("Disable the null display event")
-                .define("nullDisplayEvent", false);
+                .comment("Disable the null title spam event")
+                .define("disableNullTitleSpamEvent", false);
 
         DISABLE_BEDROCK_PLACEMENT_EVENT = BUILDER
                 .comment("Disable the bedrock placement event")
-                .define("bedrockPlacementEvent", false);
+                .define("disableBedrockPlacementEvent", false);
 
         DISABLE_WATER_PLACEMENT_EVENT = BUILDER
                 .comment("Disable the water placement event")
-                .define("waterPlacementEvent", false);
+                .define("disableWaterPlacementEvent", false);
 
         DISABLE_EXPLOSION_EVENT = BUILDER
                 .comment("Disable the explosion event")
-                .define("explosionEvent", false);
+                .define("disableExplosionEvent", false);
 
         DISABLE_TIME_CHANGE_EVENT = BUILDER
                 .comment("Disable the time change event")
                 .comment("Sets time to midnight or dawn")
-                .define("timeChangeEvent", false);
+                .define("disableTimeChangeEvent", false);
 
         DISABLE_NULL_JUMPSCARE_EVENT = BUILDER
                 .comment("Disable the null jumpscare event")
-                .define("nullJumpscareEvent", false);
+                .define("disableNullJumpscareEvent", false);
 
         DISABLE_XP_REWARD_EVENT = BUILDER
                 .comment("Disable the XP reward event")
-                .define("xpRewardEvent", false);
+                .define("disableXpRewardEvent", false);
 
         DISABLE_DISC_REWARD_EVENT = BUILDER
-                .comment("Disable the disc reward event")
-                .define("discRewardEvent", false);
+                .comment("Disable the disc 11 reward event")
+                .define("disableDiscRewardEvent", false);
 
         DISABLE_RANDOM_ROTATION_EVENT = BUILDER
                 .comment("Disable the random rotation event")
-                .define("randomRotationEvent", false);
+                .define("disableRandomRotationEvent", false);
 
         DISABLE_VOID_DIMENSION_BLOCK_EVENT = BUILDER
                 .comment("Disable the void dimension block event")
-                .define("voidDimensionBlockEvent", false);
+                .define("disableVoidDimensionBlockEvent", false);
 
         DISABLE_REDSTONE_TORCH_EVENT = BUILDER
                 .comment("Disable the redstone torch event")
-                .define("redstoneTorchEvent", false);
+                .define("disableRedstoneTorchEvent", false);
 
         DISABLE_BLANK_SIGN_EVENT = BUILDER
                 .comment("Disable the blank sign event")
-                .define("blankSignEvent", false);
+                .define("disableBlankSignEvent", false);
 
         DISABLE_WATER_SPAWN_EVENT = BUILDER
                 .comment("Disable the water spawn event")
-                .define("waterSpawnEvent", false);
+                .define("disableWaterSpawnEvent", false);
 
         DISABLE_SPAWN_SET_EVENT = BUILDER
                 .comment("Disable the spawn set event")
-                .define("spawnSetEvent", false);
+                .define("disableSpawnSetEvent", false);
 
         DISABLE_EVENING_TIME_EVENT = BUILDER
                 .comment("Disable the evening time event")
-                .define("eveningTimeEvent", false);
+                .define("disableEveningTimeEvent", false);
 
         DISABLE_RANDOM_PUSH_EVENT = BUILDER
                 .comment("Disable the random push event")
-                .define("randomPushEvent", false);
+                .define("disableRandomPushEvent", false);
 
         DISABLE_BLACK_PARTICLES_EVENT = BUILDER
                 .comment("Disable the black particles event")
-                .define("blackParticlesEvent", false);
+                .define("disableBlackParticlesEvent", false);
 
         DISABLE_BLACK_BOX_EVENT = BUILDER
                 .comment("Disable the black box event")
-                .define("blackBoxEvent", false);
+                .define("disableBlackBoxEvent", false);
 
         DISABLE_HELLO_BLOCK_EVENT = BUILDER
                 .comment("Disable the hello block event")
-                .define("helloBlockEvent", false);
+                .define("disableHelloBlockEvent", false);
 
         DISABLE_EXPLODING_BLOCK_EVENT = BUILDER
                 .comment("Disable the exploding block event")
-                .define("explodingBlockEvent", false);
+                .define("disableExplodingBlockEvent", false);
 
         DISABLE_GOOD_LUCK_SCREEN_EVENT = BUILDER
                 .comment("Disable the good luck screen event")
-                .define("goodLuckScreenEvent", false);
+                .define("disableGoodLuckScreenEvent", false);
 
         DISABLE_NULL_SPAWN_EVENT = BUILDER
                 .comment("Disable the null spawn event")
                 .comment("Spawns Null with lightning and static effects")
-                .define("nullSpawnEvent", false);
+                .define("disableNullSpawnEvent", false);
 
         DISABLE_DAYLIGHT_CYCLE_EVENT = BUILDER
                 .comment("Disable the daylight cycle event")
-                .define("daylightCycleEvent", false);
+                .define("disableDaylightCycleEvent", false);
 
         DISABLE_FAKE_BSOD_EVENT = BUILDER
                 .comment("Disable the fake BSOD event")
-                .define("fakeBsodEvent", false);
+                .define("disableFakeBsodEvent", false);
 
         DISABLE_OBFUSCATED_SIGN_EVENT = BUILDER
                 .comment("Disable the obfuscated sign event")
-                .define("obfuscatedSignEvent", false);
+                .define("disableObfuscatedSignEvent", false);
 
         DISABLE_DIAMOND_CHEST_EVENT = BUILDER
                 .comment("Disable the diamond chest event")
-                .define("diamondChestEvent", false);
+                .define("disableDiamondChestEvent", false);
 
         DISABLE_OPENGL_ERROR_EVENT = BUILDER
                 .comment("Disable the OpenGL error event")
-                .define("openglErrorEvent", false);
+                .define("disableOpenglErrorEvent", false);
 
         DISABLE_NETHERRACK_BLOCK_EVENT = BUILDER
                 .comment("Disable the netherrack block event")
-                .define("netherrackBlockEvent", false);
+                .define("disableNetherrackBlockEvent", false);
 
         DISABLE_BLOCK_REMOVAL_EVENT = BUILDER
                 .comment("Disable the block removal event")
-                .define("blockRemovalEvent", false);
+                .define("disableBlockRemovalEvent", false);
 
         DISABLE_VHS_FILTER_EVENT = BUILDER
                 .comment("Disable the VHS filter event")
-                .define("vhsFilterEvent", false);
+                .define("disableVhsFilterEvent", false);
 
         DISABLE_BLACK_DOTS_EVENT = BUILDER
                 .comment("Disable the black dots event")
                 .comment("Places dots on screen, teleports up, gives slow falling")
-                .define("blackDotsEvent", false);
+                .define("disableBlackDotsEvent", false);
 
         DISABLE_SPOOKY_EYES_EVENT = BUILDER
                 .comment("Disable the spooky eyes event")
-                .define("spookyEyesEvent", false);
+                .define("disableSpookyEyesEvent", false);
 
         DISABLE_SMILEY_CHAT_EVENT = BUILDER
                 .comment("Disable the smiley chat event")
-                .define("smileyChatEvent", false);
+                .define("disableSmileyChatEvent", false);
 
         DISABLE_DOOR_SOUNDS_EVENT = BUILDER
                 .comment("Disable the door sounds event")
-                .define("doorSoundsEvent", false);
+                .define("disableDoorSoundsEvent", false);
 
         DISABLE_MOON_SOUND_EVENT = BUILDER
                 .comment("Disable the moon sound event")
-                .define("moonSoundEvent", false);
+                .define("disableMoonSoundEvent", false);
 
         DISABLE_LEAVE_POTION_EVENT = BUILDER
                 .comment("Disable the leave potion event")
-                .define("leavePotionEvent", false);
+                .define("disableLeavePotionEvent", false);
 
         DISABLE_HEAR_ME_ADVANCEMENT_EVENT = BUILDER
                 .comment("Disable the hear me advancement event")
-                .define("hearMeAdvancementEvent", false);
+                .define("disableHearMeAdvancementEvent", false);
 
         DISABLE_FAKE_VILLAGER_EVENT = BUILDER
                 .comment("Disable the fake villager event")
-                .define("fakeVillagerEvent", false);
+                .define("disableFakeVillagerEvent", false);
 
         DISABLE_BROKEN_MOON_EVENT = BUILDER
                 .comment("Disable the broken moon event")
-                .define("brokenMoonEvent", false);
+                .define("disableBrokenMoonEvent", false);
 
         DISABLE_LAVA_CAST_EVENT = BUILDER
                 .comment("Disable the lava cast event")
-                .define("lavaCastEvent", false);
+                .define("disableLavaCastEvent", false);
 
         DISABLE_LAVA_PLACEMENT_EVENT = BUILDER
                 .comment("Disable the lava placement event")
-                .define("lavaPlacementEvent", false);
+                .define("disableLavaPlacementEvent", false);
 
         DISABLE_SHADOW_CUBE_EVENT = BUILDER
                 .comment("Disable the shadow cube event")
                 .comment("Spawns destructive shadow bug cube")
-                .define("shadowCubeEvent", false);
+                .define("disableShadowCubeEvent", false);
         //endregion
         BUILDER.pop();
     }
@@ -331,7 +327,6 @@ public class Config
     private static final ForgeConfigSpec.BooleanValue DISABLE_SOUND_EFFECTS_EVENT;
     private static final ForgeConfigSpec.BooleanValue DISABLE_NULL_ADVANCEMENT_EVENT;
     private static final ForgeConfigSpec.BooleanValue DISABLE_NULL_BOOK_EVENT;
-    private static final ForgeConfigSpec.BooleanValue DISABLE_NOTHING_EVENT;
     private static final ForgeConfigSpec.BooleanValue DISABLE_NULL_DISPLAY_EVENT;
     private static final ForgeConfigSpec.BooleanValue DISABLE_BEDROCK_PLACEMENT_EVENT;
     private static final ForgeConfigSpec.BooleanValue DISABLE_WATER_PLACEMENT_EVENT;
@@ -408,7 +403,6 @@ public class Config
     public static boolean soundEffectsEvent;
     public static boolean nullAdvancementEvent;
     public static boolean nullBookEvent;
-    public static boolean nothingEvent;
     public static boolean nullDisplayEvent;
     public static boolean bedrockPlacementEvent;
     public static boolean waterPlacementEvent;
@@ -486,7 +480,6 @@ public class Config
         soundEffectsEvent = DISABLE_SOUND_EFFECTS_EVENT.get();
         nullAdvancementEvent = DISABLE_NULL_ADVANCEMENT_EVENT.get();
         nullBookEvent = DISABLE_NULL_BOOK_EVENT.get();
-        nothingEvent = DISABLE_NOTHING_EVENT.get();
         nullDisplayEvent = DISABLE_NULL_DISPLAY_EVENT.get();
         bedrockPlacementEvent = DISABLE_BEDROCK_PLACEMENT_EVENT.get();
         waterPlacementEvent = DISABLE_WATER_PLACEMENT_EVENT.get();
