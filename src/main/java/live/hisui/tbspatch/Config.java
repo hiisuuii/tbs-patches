@@ -208,11 +208,11 @@ public class Config
 
         DISABLE_NULL_SPAWN_EVENT = BUILDER
                 .comment("Disable the null spawn event")
-                .comment("Spawns Null with lightning and static effects")
+                .comment("Spawns Null with lightning and static effects if you get too close")
                 .define("disableNullSpawnEvent", false);
 
         DISABLE_DAYLIGHT_CYCLE_EVENT = BUILDER
-                .comment("Disable the daylight cycle event")
+                .comment("Disable the daylight cycle toggle event")
                 .define("disableDaylightCycleEvent", false);
 
         DISABLE_FAKE_BSOD_EVENT = BUILDER
@@ -240,7 +240,7 @@ public class Config
                 .define("disableBlockRemovalEvent", false);
 
         DISABLE_VHS_FILTER_EVENT = BUILDER
-                .comment("Disable the VHS filter event")
+                .comment("Disable the VHS filter toggle event")
                 .define("disableVhsFilterEvent", false);
 
         DISABLE_BLACK_DOTS_EVENT = BUILDER
@@ -261,7 +261,7 @@ public class Config
                 .define("disableDoorSoundsEvent", false);
 
         DISABLE_MOON_SOUND_EVENT = BUILDER
-                .comment("Disable the moon sound event")
+                .comment("Disable the moon sound/render distance change event")
                 .define("disableMoonSoundEvent", false);
 
         DISABLE_LEAVE_POTION_EVENT = BUILDER
