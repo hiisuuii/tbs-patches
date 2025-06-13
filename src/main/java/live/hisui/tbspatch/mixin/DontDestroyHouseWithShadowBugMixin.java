@@ -20,7 +20,7 @@ public class DontDestroyHouseWithShadowBugMixin {
     at = @At("MIXINEXTRAS:EXPRESSION"), remap = false)
     private static boolean never(boolean original) {
         TBSPatchMod.LOGGER.info("Shadow event triggered: {}", original);
-        return original;
+        return false;
     }
 
 }
