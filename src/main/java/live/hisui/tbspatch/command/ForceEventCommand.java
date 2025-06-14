@@ -2,13 +2,11 @@ package live.hisui.tbspatch.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import live.hisui.tbspatch.TBSPatchMod;
 import net.mcreator.interpritation.procedures.EventEngineProcedure;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 
 public class ForceEventCommand {
@@ -16,7 +14,8 @@ public class ForceEventCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext context) {
         dispatcher.register(
                 Commands.literal("tbsp_forceevent")
-                .requires(source -> source.getEntity() instanceof ServerPlayer)
+                .requires(source -> source.getEntity() instanceof ServerPlayer
+                && source.hasPermission(4))
                 .then(Commands.argument("id", IntegerArgumentType.integer(0,54))
                         .executes(ctx -> {
                             if(TBSPatchMod.forcedEventID == null) {
@@ -31,10 +30,5 @@ public class ForceEventCommand {
                         }))
 
         );
-        dispatcher.register(Commands.literal("moonphase").executes(ctx -> {
-            String fmt = "The moon phase is: " + ctx.getSource().getLevel().dimensionType().moonPhase(ctx.getSource().getLevel().dayTime());
-            ctx.getSource().sendSuccess(() -> Component.literal(fmt), false);
-            return ctx.getSource().getLevel().dimensionType().moonPhase(ctx.getSource().getLevel().dayTime());
-        }));
     }
 }

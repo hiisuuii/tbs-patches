@@ -26,27 +26,6 @@ public class DontResetDayOnTimeChangeMixin {
         instance.setDayTime(newTime);
     }
 
-    /*@WrapOperation(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/Commands;performPrefixedCommand(Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I"))
-    private static int dontChangeDayWithCommand(Commands instance, CommandSourceStack pSource, String pCommand, Operation<Integer> original, @Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity){
-        int timeToBe = 0;
-        if(pCommand.equals("time set day")){
-            timeToBe = 0;
-        } else if(pCommand.equals("time set night")) {
-            timeToBe = 13000;
-        } else if(pCommand.equals("time set midnight")){
-            timeToBe = 18000;
-        } else {
-            return original.call(instance, pSource, pCommand);
-        }
-        if(world instanceof ServerLevel sl) {
-            long dayTime = sl.getDayTime();
-            long currentDay = dayTime / 24000;
-            long newTime = currentDay * 24000 + timeToBe;
-            sl.setDayTime(newTime);
-        }
-        return 0;
-    }*/
     @WrapOperation(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/Commands;performPrefixedCommand(Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I", ordinal = 0))
     private static int event3(Commands instance, CommandSourceStack pSource, String pCommand, Operation<Integer> original, @Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity){
