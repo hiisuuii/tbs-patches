@@ -89,6 +89,16 @@ jobs:
         echo "jar_path=$jarfile" >> $GITHUB_OUTPUT
         echo "jar_name=$(basename $jarfile)" >> $GITHUB_OUTPUT
 
+    - name: Rename JAR file for release
+      if: steps.check_release.outputs.skip_release == 'false'
+      id: rename_jar
+      run: |
+        original="${{ steps.find_jar.outputs.jar_path }}"
+        renamed="${original/-all.jar/.jar}"
+        mv "$original" "$renamed"
+        echo "jar_path=$renamed" >> $GITHUB_OUTPUT
+        echo "jar_name=$(basename "$renamed")" >> $GITHUB_OUTPUT
+
     - name: Create GitHub Release
       if: steps.check_release.outputs.skip_release == 'false'
       id: create_release
@@ -106,8 +116,8 @@ jobs:
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ${{ steps.find_jar.outputs.jar_path }}
-        asset_name: ${{ steps.find_jar.outputs.jar_name }}
+        asset_path: ${{ steps.rename_jar.outputs.jar_path }}
+        asset_name: ${{ steps.rename_jar.outputs.jar_name }}
         asset_content_type: application/java-archive
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
