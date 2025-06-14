@@ -23,7 +23,7 @@ public class ReplaceCorruptMoonLogicMixin {
             from = @At(value = "FIELD", opcode = Opcodes.GETSTATIC, target = "Lnet/minecraft/client/renderer/LevelRenderer;MOON_LOCATION:Lnet/minecraft/resources/ResourceLocation;")
     ),
             method = "renderSky",at = @At(value = "INVOKE", ordinal = 0, target = "Lcom/mojang/blaze3d/systems/RenderSystem;setShaderTexture(ILnet/minecraft/resources/ResourceLocation;)V"), index = 1)
-    private ResourceLocation inj(ResourceLocation pTextureId){
+    private ResourceLocation newMoonPhaseRenderingLogic(ResourceLocation pTextureId){
         if (ThebrokenscriptModVariables.MapVariables.get(level).moonphase == 1.0d) {
             if(Config.useOldMoonPhases){
                 return new ResourceLocation("thebrokenscript","textures/moonevent/moon_phases_old.png");

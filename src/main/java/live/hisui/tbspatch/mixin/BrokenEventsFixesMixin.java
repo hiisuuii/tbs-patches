@@ -16,7 +16,7 @@ public class BrokenEventsFixesMixin {
     slice = @Slice(
             from = @At(value = "FIELD", opcode = Opcodes.GETFIELD, target = "Lnet/mcreator/interpritation/network/ThebrokenscriptModVariables$MapVariables;moonphase:D")
     ), at = @At(value = "FIELD", opcode = Opcodes.PUTFIELD, target = "Lnet/mcreator/interpritation/network/ThebrokenscriptModVariables$MapVariables;moonphase:D"), remap = false)
-    private static void inj(ThebrokenscriptModVariables.MapVariables instance, double value, Operation<Void> original){
+    private static void fixMoonPhaseLooping(ThebrokenscriptModVariables.MapVariables instance, double value, Operation<Void> original){
         if(instance.moonphase >= 2.0){
             instance.moonphase = 0;
         } else {

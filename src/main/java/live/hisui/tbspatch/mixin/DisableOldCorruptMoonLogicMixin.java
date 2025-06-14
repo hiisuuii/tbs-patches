@@ -13,7 +13,7 @@ public class DisableOldCorruptMoonLogicMixin {
 
     @Inject(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;)V",
     at = @At("HEAD"), cancellable = true, remap = false)
-    private static void cancel(Event event, LevelAccessor world, CallbackInfo ci){
+    private static void cancelOldMoonLogic(Event event, LevelAccessor world, CallbackInfo ci){
         ci.cancel();
     }
 }
