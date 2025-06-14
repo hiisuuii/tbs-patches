@@ -6,12 +6,12 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "ChangeDefaultConfigSettings",
-    "ToggleableEventsMixin",
     "DontPreventCommandsMixin",
     "DontResetDayOnTimeChangeMixin",
     "EventEngineAllowForcingMixin",
     "ForceRandomEventCommandMixin",
     "ReenableQuitGameMixin",
+    "ToggleableEventsMixin",
     "UseOldMoonPhasesMixin"
   ],
   "injectors": {

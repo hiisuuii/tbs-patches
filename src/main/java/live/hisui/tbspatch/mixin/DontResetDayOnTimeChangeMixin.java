@@ -26,7 +26,7 @@ public class DontResetDayOnTimeChangeMixin {
         instance.setDayTime(newTime);
     }
 
-    @WrapOperation(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
+    /*@WrapOperation(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/Commands;performPrefixedCommand(Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I"))
     private static int dontChangeDayWithCommand(Commands instance, CommandSourceStack pSource, String pCommand, Operation<Integer> original, @Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity){
         int timeToBe = 0;
@@ -43,6 +43,61 @@ public class DontResetDayOnTimeChangeMixin {
             long dayTime = sl.getDayTime();
             long currentDay = dayTime / 24000;
             long newTime = currentDay * 24000 + timeToBe;
+            sl.setDayTime(newTime);
+        }
+        return 0;
+    }*/
+    @WrapOperation(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/Commands;performPrefixedCommand(Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I", ordinal = 0))
+    private static int event3(Commands instance, CommandSourceStack pSource, String pCommand, Operation<Integer> original, @Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity){
+        if(world instanceof ServerLevel sl) {
+            long dayTime = sl.getDayTime();
+            long currentDay = dayTime / 24000;
+            long newTime = currentDay * 24000 + 18000;
+            sl.setDayTime(newTime);
+        }
+        return 0;
+    }
+    @WrapOperation(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/Commands;performPrefixedCommand(Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I", ordinal = 1))
+    private static int event7(Commands instance, CommandSourceStack pSource, String pCommand, Operation<Integer> original, @Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity){
+        if(world instanceof ServerLevel sl) {
+            long dayTime = sl.getDayTime();
+            long currentDay = dayTime / 24000;
+            long newTime = currentDay * 24000 + 13000;
+            sl.setDayTime(newTime);
+        }
+        return 0;
+    }
+    @WrapOperation(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/Commands;performPrefixedCommand(Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I", ordinal = 18))
+    private static int event20Midnight(Commands instance, CommandSourceStack pSource, String pCommand, Operation<Integer> original, @Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity){
+        if(world instanceof ServerLevel sl) {
+            long dayTime = sl.getDayTime();
+            long currentDay = dayTime / 24000;
+            long newTime = currentDay * 24000 + 18000;
+            sl.setDayTime(newTime);
+        }
+        return 0;
+    }
+    @WrapOperation(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/Commands;performPrefixedCommand(Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I", ordinal = 19))
+    private static int event20Day(Commands instance, CommandSourceStack pSource, String pCommand, Operation<Integer> original, @Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity){
+        if(world instanceof ServerLevel sl) {
+            long dayTime = sl.getDayTime();
+            long currentDay = dayTime / 24000;
+            long newTime = currentDay * 24000;
+            sl.setDayTime(newTime);
+        }
+        return 0;
+    }
+    @WrapOperation(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;DDDLnet/minecraft/world/entity/Entity;)V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/commands/Commands;performPrefixedCommand(Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I", ordinal = 20))
+    private static int event34(Commands instance, CommandSourceStack pSource, String pCommand, Operation<Integer> original, @Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity){
+        if(world instanceof ServerLevel sl) {
+            long dayTime = sl.getDayTime();
+            long currentDay = dayTime / 24000;
+            long newTime = currentDay * 24000 + 18000;
             sl.setDayTime(newTime);
         }
         return 0;

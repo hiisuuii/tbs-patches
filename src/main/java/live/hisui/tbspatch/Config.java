@@ -84,8 +84,8 @@ public class Config
                 .define("disableLightningStrikeEvent", false);
 
         DISABLE_GRASS_BREAKING_SOUNDS_EVENT = BUILDER
-                .comment("Disable the grass breaking sounds event")
-                .define("disableGrassBreakingSoundsEvent", false);
+                .comment("Disable the grass footstep sounds event")
+                .define("disableGrassFootstepSoundsEvent", false);
 
         DISABLE_NIGHT_CAVE_SOUNDS_EVENT = BUILDER
                 .comment("Disable the night cave sounds event")
@@ -93,11 +93,11 @@ public class Config
                 .define("disableNightCaveSoundsEvent", false);
 
         DISABLE_HUNGER_EVENT = BUILDER
-                .comment("Disable the hunger event")
+                .comment("Disable the random hunger event")
                 .define("disableHungerEvent", false);
 
         DISABLE_CLOSE_GUI_EVENT = BUILDER
-                .comment("Disable the close GUI event")
+                .comment("Disable the close active GUI event")
                 .define("disableCloseGuiEvent", false);
 
         DISABLE_NULL_SCREENS_EVENT = BUILDER
@@ -105,12 +105,12 @@ public class Config
                 .define("disableNullScreensEvent", false);
 
         DISABLE_CHAT_MESSAGES_EVENT = BUILDER
-                .comment("Disable the chat messages event")
+                .comment("Disable the random chat messages event")
                 .define("disableChatMessagesEvent", false);
 
         DISABLE_SOUND_EFFECTS_EVENT = BUILDER
                 .comment("Disable the sound effects event")
-                .comment("Plays cave sounds, disc 13, disc 11, or stops sounds")
+                .comment("Either plays cave sounds, disc 13, disc 11, or stops sounds")
                 .define("disableSoundEffectsEvent", false);
 
         DISABLE_NULL_ADVANCEMENT_EVENT = BUILDER
@@ -207,9 +207,9 @@ public class Config
                 .define("disableGoodLuckScreenEvent", false);
 
         DISABLE_NULL_SPAWN_EVENT = BUILDER
-                .comment("Disable the null spawn event")
+                .comment("Disable the null stalker event")
                 .comment("Spawns Null with lightning and static effects if you get too close")
-                .define("disableNullSpawnEvent", false);
+                .define("disableNullStalkerEvent", false);
 
         DISABLE_DAYLIGHT_CYCLE_EVENT = BUILDER
                 .comment("Disable the daylight cycle toggle event")
@@ -257,8 +257,8 @@ public class Config
                 .define("disableSmileyChatEvent", false);
 
         DISABLE_DOOR_SOUNDS_EVENT = BUILDER
-                .comment("Disable the door sounds event")
-                .define("disableDoorSoundsEvent", false);
+                .comment("Disable the door open/close event")
+                .define("disableDoorEvent", false);
 
         DISABLE_MOON_SOUND_EVENT = BUILDER
                 .comment("Disable the moon sound/render distance change event")
@@ -277,8 +277,8 @@ public class Config
                 .define("disableFakeVillagerEvent", false);
 
         DISABLE_BROKEN_MOON_EVENT = BUILDER
-                .comment("Disable the broken moon event")
-                .define("disableBrokenMoonEvent", false);
+                .comment("Disable the moon corruption event")
+                .define("disableMoonCorruptionEvent", false);
 
         DISABLE_LAVA_CAST_EVENT = BUILDER
                 .comment("Disable the lava cast event")
