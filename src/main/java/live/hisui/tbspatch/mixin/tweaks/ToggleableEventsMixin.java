@@ -6,11 +6,9 @@ import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import live.hisui.tbspatch.Config;
 import net.mcreator.interpritation.procedures.EventEngineProcedure;
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
-@Debug(export = true)
 @Mixin(EventEngineProcedure.class)
 public class ToggleableEventsMixin {
 

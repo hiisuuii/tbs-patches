@@ -7,6 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.mixin.MixinEnvironment;
@@ -26,7 +27,9 @@ public class TBSPatchMod
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         MinecraftForge.EVENT_BUS.addListener(this::registerCommands);
-        MixinEnvironment.getCurrentEnvironment().audit();
+        if(!FMLLoader.isProduction()) {
+            MixinEnvironment.getCurrentEnvironment().audit();
+        }
     }
 
     @SubscribeEvent
