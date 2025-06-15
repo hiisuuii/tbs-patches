@@ -1,4 +1,4 @@
-package live.hisui.tbspatch.mixin;
+package live.hisui.tbspatch.mixin.fixes;
 
 import com.mojang.brigadier.context.CommandContext;
 import live.hisui.tbspatch.TBSPatchMod;
@@ -6,7 +6,6 @@ import net.mcreator.interpritation.command.ForceEventCommand;
 import net.mcreator.interpritation.procedures.EventEngineProcedure;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;

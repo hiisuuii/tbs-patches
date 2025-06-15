@@ -1,4 +1,4 @@
-package live.hisui.tbspatch.mixin;
+package live.hisui.tbspatch.mixin.fixes;
 
 import live.hisui.tbspatch.Config;
 import net.mcreator.interpritation.network.ThebrokenscriptModVariables;

@@ -1,4 +1,4 @@
-package live.hisui.tbspatch.mixin;
+package live.hisui.tbspatch.mixin.internal;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import live.hisui.tbspatch.TBSPatchMod;

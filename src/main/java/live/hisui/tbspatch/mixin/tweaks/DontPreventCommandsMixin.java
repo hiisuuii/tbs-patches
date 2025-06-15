@@ -1,4 +1,4 @@
-package live.hisui.tbspatch.mixin;
+package live.hisui.tbspatch.mixin.tweaks;
 
 import live.hisui.tbspatch.Config;
 import net.mcreator.interpritation.procedures.CommandExecutedByPlayerProcedure;

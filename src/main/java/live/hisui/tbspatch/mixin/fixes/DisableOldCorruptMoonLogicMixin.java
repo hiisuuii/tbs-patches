@@ -1,4 +1,4 @@
-package live.hisui.tbspatch.mixin;
+package live.hisui.tbspatch.mixin.fixes;
 
 import net.mcreator.interpritation.procedures.MoonDevoidsProcedure;
 import net.minecraft.world.level.LevelAccessor;
